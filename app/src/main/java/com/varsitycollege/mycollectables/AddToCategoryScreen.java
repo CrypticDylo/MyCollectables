@@ -2,7 +2,9 @@ package com.varsitycollege.mycollectables;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +21,7 @@ public class AddToCategoryScreen extends AppCompatActivity {
     Spinner selectCategoryUserInput;
 
     Button addToSubmitButton;
-
+    Button addImageButton;
 
 
     @Override
@@ -32,6 +34,25 @@ public class AddToCategoryScreen extends AppCompatActivity {
 
         rarityUserInput = (Spinner) findViewById(R.id.rarityUserInput);
         selectCategoryUserInput = (Spinner) findViewById(R.id.rarityUserInput);
+
+        addImageButton = (Button) findViewById(R.id.addImageButton);
+        addImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+
+
+                Intent intent = new Intent();
+                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivity(intent);
+            }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
 
         addToSubmitButton = (Button) findViewById(R.id.addToSubmitButton);
         addToSubmitButton.setOnClickListener(new View.OnClickListener() {
