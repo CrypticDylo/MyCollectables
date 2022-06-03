@@ -1,9 +1,12 @@
 package com.varsitycollege.mycollectables;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Telephony;
+import android.text.DynamicLayout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,13 +41,22 @@ public class AddNewCategory extends AppCompatActivity {
                 numOfCategoryItems = Integer.valueOf(numberOfItemsUserInput.getText().toString());
 
                 submitCategory();
+
             }
         });
     }
 
     public void submitCategory(){
+
+        CreateView();
+
         Intent intent = new Intent(this, CategoriesScreen.class);
         startActivity(intent);
+
+    }
+
+    private void CreateView() {
+
 
     }
 }
