@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+
 public class LoginScreen extends AppCompatActivity {
 
     private Button loginBtn;
@@ -61,6 +62,8 @@ public class LoginScreen extends AppCompatActivity {
 
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
                 String mail = Email.getText().toString().trim();
@@ -91,10 +94,10 @@ public class LoginScreen extends AppCompatActivity {
                        if(task.isSuccessful()) {
                            Toast.makeText(LoginScreen.this, "You have successfully logged in", Toast.LENGTH_SHORT).show();
                            startActivity(new Intent(getApplicationContext(),CategoriesScreen.class));
-                       }else{
+                      }else{
                            Toast.makeText(LoginScreen.this, "An error has occurred  " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                            proB.setVisibility(View.GONE);
-                       }
+                      }
                     }
                 });
             }

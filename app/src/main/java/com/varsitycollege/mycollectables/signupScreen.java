@@ -51,10 +51,7 @@ public class signupScreen extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         progressbar = findViewById(R.id.progressBar);
 
-        if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),LoginScreen.class));
-            finish();
-        }
+
 
         //sign up conditions to check if the values entered are valid
 
@@ -95,7 +92,7 @@ public class signupScreen extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(signupScreen.this, "You have successfully signed up", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),LoginScreen.class));
-                        }else{
+                       }else{
                             Toast.makeText(signupScreen.this, "An error has occurred  " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressbar.setVisibility(View.GONE);
                         }
