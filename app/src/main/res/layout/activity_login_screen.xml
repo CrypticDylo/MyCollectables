@@ -38,7 +38,7 @@
     <EditText
         android:id="@+id/passwordUserInput"
         android:layout_width="210dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:hint="Password"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,8 +51,8 @@
     <EditText
         android:id="@+id/usernameUserInput"
         android:layout_width="210dp"
-        android:layout_height="40dp"
-        android:hint="Username"
+        android:layout_height="48dp"
+        android:hint="Email"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,34 +61,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.358"></EditText>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Don't have an account? Create one."
-        android:textAppearance="@style/Widget.AppCompat.Spinner.Underlined"
-        android:textColor="@color/darkGrey"
-        android:textSize="16dp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
-
     <Button
+        android:id="@+id/loginBtnLoginPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/darkGrey"
         android:text="Login"
-        android:id="@+id/loginBtnLoginPage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578"></Button>
+        app:layout_constraintVertical_bias="0.613"></Button>
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OR"
@@ -108,10 +95,10 @@
         android:text="Login with Facebook"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862"></Button>
+        app:layout_constraintVertical_bias="0.833"></Button>
 
     <Button
         android:id="@+id/loginWGBtnLoginPage"
@@ -120,10 +107,36 @@
         android:text="Login with Google"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.792"></Button>
+        app:layout_constraintVertical_bias="0.748"></Button>
+
+    <ProgressBar
+        android:id="@+id/progressBarLog"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.926" />
+
+    <Button
+        android:id="@+id/CreateAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#787575"
+        android:text="Don't have an account? Create one."
+        android:onClick="sig"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.514" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
