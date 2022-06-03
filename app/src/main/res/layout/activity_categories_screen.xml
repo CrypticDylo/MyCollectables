@@ -7,38 +7,48 @@
     android:background="@color/backgroundGrey"
     tools:context=".CategoriesScreen">
 
-    <Toolbar
-        android:id="@+id/toolbarCategoriesScreen"
-        android:layout_width="410dp"
-        android:layout_height="56dp"
-        android:background="@color/darkGrey"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarCategoriesScreen"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/darkGrey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
 
 
-        <ImageView
-            android:id="@+id/menuToolbar"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="2dp"
-            android:clickable="true"
-            android:src="@drawable/menu_pic"></ImageView>
+            <ImageView
+                android:id="@+id/menuToolbar"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="2dp"
+                android:clickable="true"
+                android:src="@drawable/menu_pic"></ImageView>
 
-        <TextView
-            android:id="@+id/toolbarHeading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="My Collectables"
-            android:textSize="20dp"
-            android:textStyle="bold"></TextView>
+            <TextView
+                android:id="@+id/toolbarHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="My Collectables"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
-    </Toolbar>
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <Button
         android:id="@+id/addCategoryFromCategoriesScreenBtn"
