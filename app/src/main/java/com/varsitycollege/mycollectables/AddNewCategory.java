@@ -1,6 +1,7 @@
 package com.varsitycollege.mycollectables;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,9 +10,14 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Telephony;
 import android.text.DynamicLayout;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class AddNewCategory extends AppCompatActivity {
 
@@ -31,6 +37,8 @@ public class AddNewCategory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_category);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarAddNewCategoryScreen);
+        setSupportActionBar(toolbar);
         categoryNameUserInput = (EditText) findViewById(R.id.categoryNameUserInput);
         categoryDescriptionUserInput = (EditText) findViewById(R.id.categoryDescriptionUserInput);
         numberOfItemsUserInput = (EditText) findViewById(R.id.numberOfItemsUserInput);
@@ -44,8 +52,7 @@ public class AddNewCategory extends AppCompatActivity {
                     Intent intent = new Intent();
                     intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivity(intent);
-                }
-                catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -63,7 +70,7 @@ public class AddNewCategory extends AppCompatActivity {
         });
     }
 
-    public void submitCategory(){
+    public void submitCategory() {
 
         CreateView();
         Intent intent = new Intent(this, CategoriesScreen.class);
@@ -73,10 +80,41 @@ public class AddNewCategory extends AppCompatActivity {
     private void CreateView() {
 
 
+    }
 
+    //code below creates a menu button
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    //code below creates options for our menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.nav_home:
+                Toast.makeText(getApplicationContext(), "Item 1 Selected", Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.nav_addCategory:
+                startActivity(new Intent(getApplicationContext(), AddNewCategory.class));
+                finish();
+                return true;
+            case R.id.nav_addToCategory:
+                startActivity(new Intent(getApplicationContext(), AddToCategoryScreen.class));
+                finish();
+                return true;
+            case R.id.nav_logout:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), LoginScreen.class));
+                finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
-
 /**import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

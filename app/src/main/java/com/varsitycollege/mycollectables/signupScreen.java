@@ -20,6 +20,13 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class signupScreen extends AppCompatActivity {
 
+    //code attribution
+//this code was taken from  firebase docs
+//Firebase. (2022). Authenticate with Google on Android  |  Firebase Documentation. [online] Available at: https://firebase.google.com/docs/auth/android/google-signin#:~:text=You%20can%20let%20your%20users%20authenticate%20with%20Firebase,in%20your%20module%20%28app-level%29%20Gradle%20file%20%28usually%20app%2Fbuild.gradle%29. [Accessed 3 Jun. 2022].
+
+
+
+
     //declare variables to work with objects in the activity_signup_screen
 
     Button signupBtn;

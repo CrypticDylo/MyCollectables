@@ -20,6 +20,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class LoginScreen extends AppCompatActivity {
+    //code attribution
+//this code was based from  firebase docs
+//Firebase. (2022). Authenticate with Google on Android  |  Firebase Documentation. [online] Available at: https://firebase.google.com/docs/auth/android/google-signin#:~:text=You%20can%20let%20your%20users%20authenticate%20with%20Firebase,in%20your%20module%20%28app-level%29%20Gradle%20file%20%28usually%20app%2Fbuild.gradle%29. [Accessed 3 Jun. 2022].
+
 
     private Button loginBtn;
     Button sig;
@@ -42,6 +46,7 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
 
+        //creates a onclick listener to open registration
         sig = (Button)findViewById(R.id.CreateAcc);
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +56,7 @@ public class LoginScreen extends AppCompatActivity {
         });
 
 
+//declares the fields from xml to variables
 
         Email = findViewById(R.id.usernameUserInput);
         passW = findViewById(R.id.passwordUserInput);
@@ -63,7 +69,7 @@ public class LoginScreen extends AppCompatActivity {
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
 
-
+//checks if the users information has met the conditions
             @Override
             public void onClick(View view) {
                 String mail = Email.getText().toString().trim();
