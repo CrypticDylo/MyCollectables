@@ -38,7 +38,6 @@ public class AddToCategoryScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_to_category_screen);
-
         //code attribution
 //this code was based from javatpoint
 //www.javatpoint.com. (2021). Android Option Menu Example - javatpoint. [online] Available at: https://www.javatpoint.com/android-option-menu-example [Accessed 3 Jun. 2022].
