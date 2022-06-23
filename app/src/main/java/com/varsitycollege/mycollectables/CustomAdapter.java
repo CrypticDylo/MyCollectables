@@ -1,4 +1,4 @@
-/**package com.varsitycollege.mycollectables;
+package com.varsitycollege.mycollectables;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,11 +48,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
 
         TextView textViewCatName = holder.textViewCatName;
-        TextView textViewVersion = holder.textViewCatDescription;
+        TextView textViewCatDescription = holder.textViewCatDescription;
         ImageView imageView = holder.imageViewIcon;
 
-        textViewCatName.setText(dataSet.get(listPosition).getName());
-        textViewVersion.setText(dataSet.get(listPosition).getVersion());
+        textViewCatName.setText(dataSet.get(listPosition).getCatName());
+        textViewCatDescription.setText(dataSet.get(listPosition).getCatDescription());
         imageView.setImageResource(dataSet.get(listPosition).getImage());
     }
 
@@ -60,4 +60,4 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public int getItemCount() {
         return dataSet.size();
     }
-}*/
+}

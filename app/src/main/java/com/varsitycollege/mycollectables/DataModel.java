@@ -1,4 +1,4 @@
-/**package com.varsitycollege.mycollectables;
+package com.varsitycollege.mycollectables;
 
 public class DataModel {
 
@@ -29,4 +29,4 @@ public class DataModel {
     public int getNumOfItems() {
         return numOfItems;
     }
-}*/
+}
