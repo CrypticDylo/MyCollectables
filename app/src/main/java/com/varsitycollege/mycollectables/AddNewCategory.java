@@ -36,6 +36,7 @@ public class AddNewCategory extends AppCompatActivity {
         numberOfItemsUserInput = (EditText) findViewById(R.id.numberOfItemsUserInput);
         newaddimage = (Button) findViewById(R.id.newaddimage);
         newaddimage.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 try {
@@ -76,6 +77,148 @@ public class AddNewCategory extends AppCompatActivity {
 
     }
 }
+
+//Code Attributions Justin
+/**
+ code attribution
+ This method was taken from abhiandroid
+ https://abhiandroid.com/programming/camera
+ */
+/**
+ code attribution
+ This method was taken from tutorialspoint
+ https://www.tutorialspoint.com/android/android_camera.htm
+ */
+/**
+ code attribution
+ This method was taken from Youtube
+ https://www.youtube.com/watch?v=zeI0M9PtOBA&ab_channel=BTechDays
+ BTech Days
+ https://www.youtube.com/c/BTechDays
+ */
+
+//Dylan
+/**
+ code attribution
+ This method was taken from JournalDev
+ https://www.journaldev.com/10024/android-recyclerview-android-cardview-example-tutorial
+ */
+/**
+ code attribution
+ This method was taken from YouTube
+ https://www.youtube.com/watch?v=1vN_wuAahqA
+ */
+/**
+ code attribution
+ This method was taken from Youtube
+ https://www.youtube.com/watch?v=EJrmgJT2NnI
+ Droid Guru
+ https://www.youtube.com/Droid Guru
+ */
+
+
+
+
+/**
+ String categoryName, categoryDescription;
+ int numOfCategoryItems;
+ code attribution
+ This method was taken from abhiandroid
+ https://abhiandroid.com/programming/camera code attribution
+ This method was taken from tutorialspoint
+ https://www.tutorialspoint.com/android/android_camera.htm     code attribution
+ This method was taken from Youtube
+ https://www.youtube.com/watch?v=zeI0M9PtOBA&ab_channel=BTechDays     BTech Days
+ https://www.youtube.com/c/BTechDays    EditText categoryNameUserInput;
+ EditText numberOfItemsUserInput;
+ EditText categoryDescriptionUserInput;
+ EditText itemNameUserInput;
+ EditText itemDescriptionUserInput;
+ Button addToSubmitButton;
+ Button addnewImage;
+ Button newaddimage;
+ String itemName, itemDescription;
+ Character itemRarity, selectCategory;
+ Spinner rarityUserInput;
+ Spinner selectCategoryUserInput;
+ private Button submitAddedCategory;
+ private ImageView imgCameraImage;
+ private static final int REQUEST_IMAGE_CAPTURE=0;
+ private static final int REQUEST_IMAGE_CAPTURE_PERMISSION=100;
+ private Toolbar toolbar;
+ private DrawerLayout drawerLayout;
+ private ActionBarDrawerToggle toggleOnOff;
+ private NavigationView navigationView;
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_add_new_category);
+ categoryNameUserInput = (EditText) findViewById(R.id.categoryNameUserInput);
+ categoryDescriptionUserInput = (EditText) findViewById(R.id.categoryDescriptionUserInput);
+ numberOfItemsUserInput = (EditText) findViewById(R.id.numberOfItemsUserInput);
+ addnewImage = findViewById(R.id.addimage);
+ imgCameraImage = findViewById(R.id.imageView);
+ addnewImage.setOnClickListener(new View.OnClickListener() {
+ @Override
+ public void onClick(View v) {
+ //check if we have camera permission
+ if (ActivityCompat.checkSelfPermission(AddNewCategory.this, Manifest.permission.CAMERA)
+ != PackageManager.PERMISSION_GRANTED)
+ {
+ final String[] permissions = {Manifest.permission.CAMERA};
+ //request permission -this is asynchronous
+ ActivityCompat.requestPermissions(AddNewCategory.this,
+ permissions,REQUEST_IMAGE_CAPTURE_PERMISSION);
+ }
+ else
+ {
+ takePhoto();
+ }
+ }
+ });
+ submitAddedCategory = (Button) findViewById(R.id.addToSubmitButton);
+ submitAddedCategory.setOnClickListener(new View.OnClickListener() {
+ @Override
+ public void onClick(View view) {
+ categoryName = categoryNameUserInput.getText().toString();
+ categoryDescription = categoryDescriptionUserInput.getText().toString();
+ numOfCategoryItems = Integer.valueOf(numberOfItemsUserInput.getText().toString());
+ submitCategory();
+ }
+ });
+ }
+ public void submitCategory(){
+ CreateView();
+ Intent intent = new Intent(this, CategoriesScreen.class);
+ startActivity(intent);
+ }
+ private void CreateView() {
+ }
+ //Requests permission to use the camera
+ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+ super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+ if (requestCode == REQUEST_IMAGE_CAPTURE_PERMISSION &&
+ ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
+ PackageManager.PERMISSION_GRANTED) {
+ //Permission granted so take the photo
+ takePhoto();
+ }
+ }
+ //Take photo
+ public void takePhoto(){
+ Intent i=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+ startActivityForResult(i,REQUEST_IMAGE_CAPTURE);
+ }
+ //Displays the taken photo in the App
+ @Override
+ protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+ super.onActivityResult(requestCode, resultCode, data);
+ if(requestCode==REQUEST_IMAGE_CAPTURE && data!=null){
+ Bitmap bitmap=(Bitmap)data.getExtras().get("data");
+ imgCameraImage.setImageBitmap(bitmap);
+ }
+ };
+ } */
 
 /**import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
