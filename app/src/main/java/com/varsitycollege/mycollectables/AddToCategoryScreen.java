@@ -1,15 +1,20 @@
 package com.varsitycollege.mycollectables;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +38,16 @@ public class AddToCategoryScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_to_category_screen);
+
+        //code attribution
+//this code was based from javatpoint
+//www.javatpoint.com. (2021). Android Option Menu Example - javatpoint. [online] Available at: https://www.javatpoint.com/android-option-menu-example [Accessed 3 Jun. 2022].
+
+
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarAddToCategoryScreen);
+        setSupportActionBar(toolbar);
+
 
         String[] arraySpinnerRarity = new String[]{
                 "Common", "Uncommon", "Rare", "One-of-a-kind"
@@ -85,5 +100,37 @@ public class AddToCategoryScreen extends AppCompatActivity {
         });
 
 
+
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.nav_home:
+                startActivity(new Intent(getApplicationContext(), CategoriesScreen.class));
+                finish();
+                return true;
+            case R.id.nav_addCategory:
+                startActivity(new Intent(getApplicationContext(), AddNewCategory.class));
+                finish();
+                return true;
+            case R.id.nav_addToCategory:
+                startActivity(new Intent(getApplicationContext(), AddToCategoryScreen.class));
+                finish();
+                return true;
+            case R.id.nav_logout:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), LoginScreen.class));
+                finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+}
 }
