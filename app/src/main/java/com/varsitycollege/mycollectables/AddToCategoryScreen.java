@@ -104,6 +104,7 @@ public class AddToCategoryScreen extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -122,6 +123,10 @@ public class AddToCategoryScreen extends AppCompatActivity {
                 return true;
             case R.id.nav_addToCategory:
                 startActivity(new Intent(getApplicationContext(), AddToCategoryScreen.class));
+                finish();
+                return true;
+            case R.id.nav_myStats:
+                startActivity(new Intent(getApplicationContext(), MyStats.class));
                 finish();
                 return true;
             case R.id.nav_logout:

@@ -1,51 +1,27 @@
 package com.varsitycollege.mycollectables;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class CategoriesScreen extends AppCompatActivity {
-
-    private Button addCategoryBtn;
+public class MyStats extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categories_screen);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarCategoriesScreen);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_my_stats);
 
-        addCategoryBtn = (Button) findViewById(R.id.addCategoryFromCategoriesScreenBtn);
-        addCategoryBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addCategory();
-            }
-        });
     }
 
-    public void addCategory() {
-        Intent intent = new Intent(this, AddNewCategory.class);
-        startActivity(intent);
-    }
-
-//code attribution
-//this code was based from javatpoint
-//www.javatpoint.com. (2021). Android Option Menu Example - javatpoint. [online] Available at: https://www.javatpoint.com/android-option-menu-example [Accessed 3 Jun. 2022].
-
-
-//code below creates a menu button
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -82,4 +58,5 @@ public class CategoriesScreen extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }

@@ -21,6 +21,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 
 public class AddNewCategory extends AppCompatActivity {
@@ -43,74 +45,6 @@ public class AddNewCategory extends AppCompatActivity {
     private static ArrayList<DataModel> data;
     static View.OnClickListener myOnClickListener;
     private static ArrayList<Integer> removedItems;
-
-
-
-
-    private static class MyOnClickListener implements View.OnClickListener {
-
-        private final Context context;
-
-        private MyOnClickListener(Context context) {
-            this.context = context;
-        }
-
-        @Override
-        public void onClick(View v) {
-            removeItem(v);
-        }
-
-        private void removeItem(View v) {
-            int selectedItemPosition = recyclerView.getChildPosition(v);
-            RecyclerView.ViewHolder viewHolder
-                    = recyclerView.findViewHolderForPosition(selectedItemPosition);
-            TextView textViewName
-                    = (TextView) viewHolder.itemView.findViewById(R.id.textViewCatName);
-            String selectedName = (String) textViewName.getText();
-            int selectedItemId = -1;
-            for (int i = 0; i < MyData.catNameArray.length; i++) {
-                if (selectedName.equals(MyData.catNameArray[i])) {
-                    selectedItemId = MyData.numOfItemsArray[i];
-                }
-            }
-            removedItems.add(selectedItemId);
-            data.remove(selectedItemPosition);
-            adapter.notifyItemRemoved(selectedItemPosition);
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        super.onOptionsItemSelected(item);
-        if (item.getItemId() == R.id.numberOfItemsUserInput) {
-            //check if any items to add
-            if (removedItems.size() != 0) {
-                addRemovedItemToList();
-            } else {
-                Toast.makeText(this, "Add Category", Toast.LENGTH_SHORT).show();
-            }
-        }
-        return true;
-    }
-
-    private void addRemovedItemToList() {
-        int addItemAtListPosition = 3;
-        data.add(addItemAtListPosition, new DataModel(
-                MyData.catNameArray[removedItems.get(0)],
-                MyData.catDescriptionArray[removedItems.get(0)],
-                MyData.catImageArray[removedItems.get(0)],
-                MyData.numOfItemsArray[removedItems.get(0)]
-        ));
-        adapter.notifyItemInserted(addItemAtListPosition);
-        removedItems.remove(0);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -202,6 +136,100 @@ public class AddNewCategory extends AppCompatActivity {
             }
         });
     }
+
+
+    private static class MyOnClickListener implements View.OnClickListener {
+
+        private final Context context;
+
+        private MyOnClickListener(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        public void onClick(View v) {
+            removeItem(v);
+        }
+
+        private void removeItem(View v) {
+            int selectedItemPosition = recyclerView.getChildPosition(v);
+            RecyclerView.ViewHolder viewHolder
+                    = recyclerView.findViewHolderForPosition(selectedItemPosition);
+            TextView textViewName
+                    = (TextView) viewHolder.itemView.findViewById(R.id.textViewCatName);
+            String selectedName = (String) textViewName.getText();
+            int selectedItemId = -1;
+            for (int i = 0; i < MyData.catNameArray.length; i++) {
+                if (selectedName.equals(MyData.catNameArray[i])) {
+                    selectedItemId = MyData.numOfItemsArray[i];
+                }
+            }
+            removedItems.add(selectedItemId);
+            data.remove(selectedItemPosition);
+            adapter.notifyItemRemoved(selectedItemPosition);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        /*super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.numberOfItemsUserInput) {
+            //check if any items to add
+            if (removedItems.size() != 0) {
+                addRemovedItemToList();
+            } else {
+                Toast.makeText(this, "Add Category", Toast.LENGTH_SHORT).show();
+            }
+        }
+        return true;*/
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.nav_home:
+                startActivity(new Intent(getApplicationContext(), CategoriesScreen.class));
+                finish();
+                return true;
+            case R.id.nav_addCategory:
+                startActivity(new Intent(getApplicationContext(), AddNewCategory.class));
+                finish();
+                return true;
+            case R.id.nav_addToCategory:
+                startActivity(new Intent(getApplicationContext(), AddToCategoryScreen.class));
+                finish();
+                return true;
+            case R.id.nav_myStats:
+                startActivity(new Intent(getApplicationContext(), MyStats.class));
+                finish();
+                return true;
+            case R.id.nav_logout:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), LoginScreen.class));
+                finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    private void addRemovedItemToList() {
+        int addItemAtListPosition = 3;
+        data.add(addItemAtListPosition, new DataModel(
+                MyData.catNameArray[removedItems.get(0)],
+                MyData.catDescriptionArray[removedItems.get(0)],
+                MyData.catImageArray[removedItems.get(0)],
+                MyData.numOfItemsArray[removedItems.get(0)]
+        ));
+        adapter.notifyItemInserted(addItemAtListPosition);
+        removedItems.remove(0);
+    }
+
+
 
     public void submitCategory(){
 
