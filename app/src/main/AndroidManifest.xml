@@ -22,6 +22,9 @@
             android:name=".CategoriesScreen"
             android:exported="true" />
         <activity
+            android:name=".MyStats"
+            android:exported="true" />
+        <activity
             android:name=".signupScreen"
             android:exported="true" />
         <activity

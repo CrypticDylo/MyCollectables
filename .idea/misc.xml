@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_add_new_category.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_add_to_category_screen.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_categories_screen.xml" value="0.2" />
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_login_screen.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_my_stats.xml" value="0.176" />
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_signup_screen.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_splash_screen.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/card_views.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/nav_header.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/dazzc/AndroidStudioProjects/MyCollectables/app/src/main/res/menu/menu_main.xml" value="0.176" />
         <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_add_new_category.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_add_to_category_screen.xml" value="0.152" />
         <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_categories_screen.xml" value="0.1" />
@@ -11,11 +22,11 @@
         <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_signup_screen.xml" value="0.264" />
         <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/app_bar_nav_menu.xml" value="0.1" />
-        <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/card_views.xml" value="0.4" />
+        <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/card_views.xml" value="0.176" />
         <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/content_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/layout/nav_header.xml" value="0.264" />
         <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
-        <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/menu/menu_main.xml" value="0.264" />
+        <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/menu/menu_main.xml" value="0.1" />
         <entry key="..\:/Users/dylan/AndroidStudioProjects/MyCollectables/app/src/main/res/menu/nav__menu.xml" value="0.1" />
       </map>
     </option>
